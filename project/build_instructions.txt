@@ -1,8 +1,13 @@
-# Компиляция библиотеки\n\
-g++ -fPIC -shared lib/main_ops.cpp -Iinclude -o src/libmath_ops.so\n\n\
-# Компиляция основной программы\n\
-g++ lib/main.cpp -Iinclude src/libmath_ops.so -o a.out\n\n\
-# Установка переменной окружения (bash)\n\
-export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$(pwd)/src\n\n\
-# Запуск\n\
+# Компиляция библиотеки
+g++ -fPIC -shared lib/main_ops.cpp -Iinclude -o src/libmath_ops.so
+
+# Компиляция основной программы
+g++ lib/main.cpp -Iinclude src/libmath_ops.so -o a.out              (a.out) - Linux
+g++ lib/main.cpp -Iinclude src/libmath_ops.so -o a.exe              (a.exe) - Windows
+
+# Установка переменной окружения
+export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$(pwd)/src                (bash)  - Linux
+$env:PATH = "$PWD\src;" + $env:PATH                                 (pwd)   - Windows
+
+# Запуск
 ./a.out add 2 3
