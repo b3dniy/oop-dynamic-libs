@@ -10,4 +10,8 @@ export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$(pwd)/src                (bash)  - Li
 $env:PATH = "$PWD\src;" + $env:PATH                                 (pwd)   - Windows
 
 # Запуск
-./a.out add 2 3
+./a.out add 2 3                                                             - Linux
+./a.exe add 2 3                                                             - Windows
+
+ldd a.out                                                                   - Linux
+objdump -x a.exe | findstr "DLL"                                            - Windows
